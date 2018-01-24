@@ -1,0 +1,22 @@
+#header {
+background-color:green;
+height:10%;
+}
+#body{
+background-color: white;
+height:80%;
+}
+#divleft {
+background-color:white;
+float: left;
+width: 25%;
+height: 25%;
+border-radius: 10px;
+}
+#divright{
+background-color:white;
+float: right;
+width: 70%;
+height: 70%;
+border-radius: 10px;
+}
