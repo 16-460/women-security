@@ -1,31 +1,64 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;  
-class NextPage extends JFrame {
-	JButton SUBMIT1,SUBMIT2,SUBMIT3,SUBMIT4,SUBMIT5,SUBMIT6;
+class NextPage extends JFrame implements ActionListener{
+	JButton SUBMIT1,SUBMIT2,SUBMIT3,SUBMIT4,SUBMIT5,SUBMIT6; 
 	JPanel panel;
+	JLabel label3;
+	JTextField UserId;
 	public NextPage(){
-	}
-	public void showButton(){
-		SUBMIT1=new JButton("Facebook");
-		SUBMIT2=new JButton("Instagram");
-		SUBMIT3=new JButton("SnapChat");
-		SUBMIT4=new JButton("WhatsApp");
-		SUBMIT5 = new JButton("Twitter");
-		SUBMIT6=new JButton("Hike");
+		label3 = new JLabel();
+		label3.setText("UserId:");
+		UserId = new JTextField(15);
 		panel=new JPanel(new GridLayout(3,1));
-
-		panel.add(SUBMIT1);
-		panel.add(SUBMIT2);
-		panel.add(SUBMIT3);
-		panel.add(SUBMIT4);
-		panel.add(SUBMIT5);
-		panel.add(SUBMIT6);
+		panel.add(label3);
+		panel.add(UserId);
 		add(panel,BorderLayout.CENTER);
 	}
 
-										                 			        }
-                                                                                   
+
+		public void showButton(){
+			SUBMIT1=new JButton("Facebook");
+			SUBMIT2=new JButton("Instagram");
+			SUBMIT3=new JButton("SnapChat");
+			SUBMIT4=new JButton("WhatsApp");
+			SUBMIT5 = new JButton("Twitter");
+			SUBMIT6=new JButton("Hike");
+			panel=new JPanel(new GridLayout(3,1));
+			panel.add(SUBMIT1);
+			panel.add(SUBMIT2);
+			panel.add(SUBMIT3);
+			panel.add(SUBMIT4);
+			panel.add(SUBMIT5);
+			panel.add(SUBMIT6);
+			add(panel,BorderLayout.CENTER);
+			SUBMIT1.addActionListener(this);
+			SUBMIT2.addActionListener(this);
+			SUBMIT3.addActionListener(this);
+			SUBMIT5.addActionListener(this);
+
+			
+		}	
+
+		public void actionPerformed(ActionEvent ae)
+		{
+		String value3=UserId.getText();
+		if (value3.equals(null)){
+			System.out.println("This field is required");
+		}
+		else{
+		NextPage page = new NextPage ();
+		page.setVisible(true);
+		        page.setSize(400,200);
+
+		}
+
+		}
+
+}	
+				
+
+		                                                                                   
 class Login extends JFrame implements ActionListener
  {
 	 JButton SUBMIT;
